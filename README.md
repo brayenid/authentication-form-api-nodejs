@@ -1,4 +1,4 @@
-# Project Title
+# Hello World!
 
 This is a very simple and basic Nodejs authentication API. Original project of this project was
 made by [guruhariharaun](guruhariharaun/Registration-and-Login-Form-in-Nodejs-and-MongoDB). In the original project,
