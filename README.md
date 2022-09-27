@@ -1,14 +1,13 @@
 # Hello World!
 
 This is a very simple and basic Nodejs authentication API. Original project of this project was
-made by [guruhariharaun](guruhariharaun/Registration-and-Login-Form-in-Nodejs-and-MongoDB). In the original project,
-you can run this with your browser by using the HTML form. But in this project you need POSTMAN to test and run it.
-But you can still make your own HTML form by setting the 'routes' and make the views.
+made by [guruhariharaun](guruhariharaun/Registration-and-Login-Form-in-Nodejs-and-MongoDB).
 
 ## What You Need?
 
 - NODE JS
 - MongoDB
+- Postman (To test the API)
 
 ## Installation
 
