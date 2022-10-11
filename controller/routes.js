@@ -6,9 +6,7 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
   res.status(200).send({
-    message: {
-      message: 'You are logged out!',
-    },
+    message: 'You are logged out!',
   })
 })
 //Only logged in page
