@@ -5,12 +5,22 @@ import isEmail from 'validator/lib/isEmail.js'
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  res.send({
+  res.status(200).send({
     message: {
-      register: '/register',
-      login: '/login',
-      logout: '/logout',
+      message: 'You are logged out!',
     },
+  })
+})
+//Only logged in page
+router.get('/logged', (req, res, next) => {
+  User.findOne({ unique_id: req.session.userId }, async (err, data) => {
+    if (!data) {
+      res.redirect('/')
+    } else {
+      res.status(200).send({
+        message: 'You are logged!',
+      })
+    }
   })
 })
 router.post('/register', (req, res, next) => {
@@ -41,9 +51,7 @@ router.post('/register', (req, res, next) => {
               })
                 .sort({ _id: -1 })
                 .limit(1)
-              res.status(201)
-              res.send({
-                status: 201,
+              res.status(201).send({
                 message: `Registered! as ${req.body.username}`,
               })
             } else {
@@ -86,7 +94,6 @@ router.post('/login', (req, res, next) => {
     }
   })
 })
-
 router.get('/logout', (req, res, next) => {
   if (req.session) {
     req.session.destroy((err) => {
